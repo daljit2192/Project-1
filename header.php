@@ -39,10 +39,10 @@ include 'submit.php'; ?>
                         <a class="nav-link" href="contactus.html">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <?php if(!isset($_SESSION['loggedInUser'])){ ?>
+                        <?php if(!isset($_SESSION['user'])){ ?>
                             <a class="nav-link" href="login.php">Login</a>
                         <?php } else { ?>
-                            <a class="nav-link" href="">Dashboard</a>
+                            <a class="nav-link" href="admin/dashboard.php">Dashboard</a>
                         <?php }  ?>
                     </li>     
                 </ul>

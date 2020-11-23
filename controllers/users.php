@@ -1,9 +1,9 @@
 <?php 
-include './config/connect.php';
+include 'connect.php';
 class User extends Connect{
 
-	public $user = array('data' =>array() , 'error'=> '','success'=>'', 'status'=>false );
-	public $users = array('data' =>array() , 'error'=> '', 'success'=>'', 'status'=>false );
+	public $recepie = array('data' =>array() , 'error'=> '','success'=>'', 'status'=>false );
+	public $recepies = array('data' =>array() , 'error'=> '', 'success'=>'', 'status'=>false );
 
 	function addUser($user_data){
 		// echo "contorller called";die;
@@ -70,5 +70,20 @@ class User extends Connect{
         	return true;
         }		
 	} 
+
+	function getRecepies(){
+		$sql = "SELECT * FROM recepie WHERE user_id = '".$_SESSION["user"]["id"]."';";
+		// echo $sql; die;
+        $result = $this->conn->query($sql);
+
+        if ($result->num_rows > 0) {
+        	while($row = $result->fetch_assoc()) {
+                array_push($this->recepies['data'],$row);
+            }
+
+		} 
+		 return $this->recepies;		
+	} 
+	
 }
 ?>

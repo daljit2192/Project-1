@@ -1,7 +1,7 @@
 <?php session_start();
 include 'submit.php'; 
 
-if(isset($_SESSION['loggedInUser'])){
+if(isset($_SESSION['user'])){
     header("Location: index.php");
 } 
 ?>
@@ -24,6 +24,23 @@ if(isset($_SESSION['loggedInUser'])){
                             <h3 class="panel-title">Please Sign In</h3>
                         </div>
                         <div class="panel-body">
+                            <?php 
+                                if(!empty($user)) {
+                                    if($user["error"] !== ""){
+                            ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <?php echo $user["error"]; ?>
+                            </div>
+                            <?php } elseif ($user["success"]!=="") { ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <?php 
+                                    echo $user["success"];
+                                    header( "refresh:1;url=admin/dashboard.php" );
+                                ?>
+                            </div>
+                            <?php }} ?>
                             <form role="form" method="post">
                                 <fieldset>
                                     <div class="form-group">

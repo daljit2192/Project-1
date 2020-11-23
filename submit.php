@@ -21,12 +21,12 @@
         $userData = array('email'=>$_POST["email"], 'password'=>md5($_POST["password"]));
         $user = $userObj->loginUser($userData);
         
-        if($user['status'] == true){
-            $_SESSION["loggedInUser"] = $user['data'][0];
-            // echo "<pre>"; print_r($_SESSION["loggedInUser"]); die;
-            // header("Location: index.php");
-        } else {
-            echo $user['error'];
-        }
+            $_SESSION["user"] = $user['data'][0];
+        // if($user['status'] == true){
+        //     // echo "<pre>"; print_r($_SESSION["loggedInUser"]); die;
+        //     // header("Location: index.php");
+        // } else {
+        //     // echo $user['error'];
+        // }
     }
 ?>

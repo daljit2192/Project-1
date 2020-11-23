@@ -1,7 +1,7 @@
 <?php session_start();
 include 'submit.php'; 
 
-if(isset($_SESSION['loggedInUser'])){
+if(isset($_SESSION['user'])){
     header("Location: index.php");
 } 
 ?>
