@@ -5,7 +5,7 @@ class Connect
         'servername'=> 'localhost',
         'username'=> 'root', 
         'password'=> '', 
-        'dbname'=> 'recepie'
+        'dbname'=> 'tiffen'
     );
 
     public $conn;

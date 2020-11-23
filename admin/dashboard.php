@@ -1,7 +1,7 @@
 <?php session_start();
 if(!isset($_SESSION['user'])){
     // echo "m here"; die;
-    header("Location: ../login.php");
+    header("Location: login.php");
 } ?>
 <?php include 'submit.php' ?>
 <?php include 'header.php' ?>

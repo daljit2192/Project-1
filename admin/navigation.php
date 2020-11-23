@@ -26,7 +26,7 @@
                                 <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="receipies.php"><i class="fa fa-table fa-fw"></i> Recipies</a>
+                                <a href="users.php"><i class="fa fa-table fa-fw"></i> Users</a>
                             </li>
                             
                             

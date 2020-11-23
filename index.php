@@ -1,4 +1,4 @@
-        <?php include 'header.php'; ?>
+<?php include 'header.php'; ?>
         <!-- Slider -->
         <div id="slider" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
@@ -8,21 +8,21 @@
             </ul>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./images/image.png" alt="Image 1" width="1100" height="500">
+                    <img src="./images/sl1.jpg" alt="Image 1" width="1100" height="500">
                     <div class="carousel-caption">
                         <h3>Slide 1</h3>
                         <p>Image 1</p>
                     </div>   
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/image.png" alt="Image 2" width="1100" height="500">
+                    <img src="./images/sl2.jpg" alt="Image 2" width="1100" height="500">
                     <div class="carousel-caption">
                         <h3>Slide 2</h3>
                         <p>Image 2</p>
                     </div>   
                 </div>
                 <div class="carousel-item">
-                    <img src="./images/image.png" alt="Image 3" width="1100" height="500">
+                    <img src="./images/sl3.jpg" alt="Image 3" width="1100" height="500">
                         <div class="carousel-caption">
                             <h3>Slide 3</h3>
                             <p>Image 3</p>
@@ -36,27 +36,34 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
-
         <div class="container-fluid">
             <div class="row p-5">
                 <div class="col-12 text-center">
-                    <h2>Recepies</h2>
+                    <h2>Meals</h2>
                 </div>
                 <div class="col-12 my-5" >
                     <div class="card-deck px-5">
                         <div class="card">
-                            <img src="./images/image.png" class="card-img-top" alt="Image">
+                           	<a href="meal_plans.php">
+                            	<img src="./images/paneer.jpg" class="card-img-top" alt="Image">
+                                <div class="overlay">Gujrati food</div>
+                            </a>
                         </div>
                         <div class="card">
-                            <img src="./images/image.png" class="card-img-top" alt="Image">
+                        	<a href="meal_plans.php">
+                            	<img src="./images/sm2r.jpg" class="card-img-top" alt="Image">
+                                <div class="overlay">Punjabi Food</div>
+                            </a>
                         </div>
                         <div class="card">
-                            <img src="./images/image.png" class="card-img-top" alt="Image">
+                        	<a href="meal_plans.php">
+                            	<img src="./images/sm3.jpg" class="card-img-top" alt="Image">
+                                <div class="overlay">Soth Indian</div>
+                        	</a>
                         </div>
                     </div>
                 </div>
             </div>
-    
             <div class="row p-5">
                 <div class="col-md-3 text-center contact-border">
                     <i class="fa fa-map-marker"  aria-hidden="true"></i>
@@ -80,5 +87,4 @@
                 </div>
             </div>
         </div>
-        <?php include 'footer.php'; ?>
-        
+<?php include 'footer.php'; ?>
