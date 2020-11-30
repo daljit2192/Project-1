@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+        <?php include 'header.php'; ?>
         <!-- Slider -->
         <div id="slider" class="carousel slide" data-ride="carousel">
             <ul class="carousel-indicators">
@@ -7,27 +7,21 @@
                 <li data-target="#slider" data-slide-to="2"></li>
             </ul>
             <div class="carousel-inner">
+                <?php $i=0;foreach ($sliderImages['data'] as $sliderImage) { 
+                    if($i==0){
+                        $i=1; ?>
                 <div class="carousel-item active">
-                    <img src="./images/sl1.jpg" alt="Image 1" width="1100" height="500">
+
+                    <?php } else { ?>
+                <div class="carousel-item">
+                    <?php }  ?>
+                    <img src="<?php echo $sliderImage['slider_image_path'].$sliderImage['slider_image'] ?>" alt="Image 1" width="1100" height="500">
                     <div class="carousel-caption">
-                        <h3>Slide 1</h3>
-                        <p>Image 1</p>
+                        <!-- <h3>Slide 1</h3> -->
+                        <!-- <p>Image 1</p> -->
                     </div>   
                 </div>
-                <div class="carousel-item">
-                    <img src="./images/sl2.jpg" alt="Image 2" width="1100" height="500">
-                    <div class="carousel-caption">
-                        <h3>Slide 2</h3>
-                        <p>Image 2</p>
-                    </div>   
-                </div>
-                <div class="carousel-item">
-                    <img src="./images/sl3.jpg" alt="Image 3" width="1100" height="500">
-                        <div class="carousel-caption">
-                            <h3>Slide 3</h3>
-                            <p>Image 3</p>
-                        </div>   
-                </div>
+                <?php } ?>
             </div>
             <a class="carousel-control-prev" href="#slider" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -36,34 +30,27 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
-        <div class="container-fluid">
+
+        <div class="container-fluid" id="recepies">
             <div class="row p-5">
                 <div class="col-12 text-center">
-                    <h2>Meals</h2>
+                    <h2>Recepies <?php //echo count($foodtypes["data"]); ?> </h2>
                 </div>
                 <div class="col-12 my-5" >
                     <div class="card-deck px-5">
-                        <div class="card">
-                           	<a href="meal_plans.php">
-                            	<img src="./images/paneer.jpg" class="card-img-top" alt="Image">
-                                <div class="overlay">Gujrati food</div>
-                            </a>
-                        </div>
-                        <div class="card">
-                        	<a href="meal_plans.php">
-                            	<img src="./images/sm2r.jpg" class="card-img-top" alt="Image">
-                                <div class="overlay">Punjabi Food</div>
-                            </a>
-                        </div>
-                        <div class="card">
-                        	<a href="meal_plans.php">
-                            	<img src="./images/sm3.jpg" class="card-img-top" alt="Image">
-                                <div class="overlay">Soth Indian</div>
-                        	</a>
-                        </div>
+                        <?php foreach ($foodtypes["data"] as $foodtype ) {?>
+                            <div class="card">
+                                <a href="recepies.php?foodtypeid=<?php echo $foodtype["id"];?>">
+                                    <img width="100" height="400" src="<?php echo $foodtype['image_path'].'/'.$foodtype['image_name'] ?>" class="card-img-top" alt="Image">
+                                    <div class="overlay"><?php echo $foodtype["type_name"]; ?></div>
+                                </a>
+                            </div>
+                        <?php } ?>
+                        
                     </div>
                 </div>
             </div>
+    
             <div class="row p-5">
                 <div class="col-md-3 text-center contact-border">
                     <i class="fa fa-map-marker"  aria-hidden="true"></i>
@@ -87,4 +74,5 @@
                 </div>
             </div>
         </div>
-<?php include 'footer.php'; ?>
+        <?php include 'footer.php'; ?>
+        

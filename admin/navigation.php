@@ -26,10 +26,16 @@
                                 <a href="dashboard.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             <li>
-                                <a href="users.php"><i class="fa fa-table fa-fw"></i> Users</a>
+                                <a href="#"><i class="fa fa-sitemap fa-fw"></i>Recepies<span class="fa arrow"></span></a>
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="receipies.php">All recepies</a>
+                                    </li>
+                                    <li>
+                                        <a href="addnewrecepie.php">Add new</a>
+                                    </li>
+                                </ul>
                             </li>
-                            
-                            
                         </ul>
                     </div>
                 </div>
